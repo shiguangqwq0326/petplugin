@@ -1,0 +1,36 @@
+:root { color-scheme: light; font: 14px/1.65 "Microsoft YaHei UI","Microsoft YaHei",sans-serif; color: #3b3850; background: #f7f6fb; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 22px 20px; }
+header { margin: 0 0 18px; }
+.tag { color: #7f76bd; font-size: 12px; letter-spacing: 2px; }
+h1 { font-size: 20px; line-height: 1.5; margin: 4px 0; }
+header p { margin: 0; color: #77708f; }
+.card { background: #fff; border: 1px solid #dcd8ea; border-radius: 14px; padding: 16px; margin-bottom: 14px; }
+h2 { font-size: 15px; margin: 0 0 10px; }
+.row { display: flex; align-items: center; justify-content: space-between; }
+.row h2 { margin: 0; }
+strong { font-size: 23px; color: #7f76bd; }
+progress { width: 100%; height: 13px; margin: 12px 0 0; border: 0; border-radius: 9px; overflow: hidden; accent-color: #8f83c8; }
+progress::-webkit-progress-bar { background: #eeebf6; }
+progress::-webkit-progress-value { background: #8f83c8; border-radius: 9px; }
+.sub { color: #77708f; font-size: 12px; }
+p { margin: 9px 0; }
+.facts { display: flex; gap: 22px; padding-top: 6px; }
+label { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 12px 0; }
+input, select, button { font: inherit; }
+input[type=number] { width: 73px; }
+input[type=number], select { padding: 5px 7px; border: 1px solid #cfcae6; border-radius: 7px; color: #3b3850; background: #fff; }
+input:focus, select:focus, button:focus-visible { outline: 2px solid #a69bd6; outline-offset: 2px; }
+.check { justify-content: flex-start; }
+.check input { accent-color: #7f76bd; }
+.divider { height: 1px; background: #efedf8; margin: 16px 0; }
+button { border: 1px solid #bdb5dc; border-radius: 8px; color: #655795; background: #f4f1fb; padding: 7px 12px; cursor: pointer; }
+button:hover { background: #ece6f8; }
+button:disabled { opacity: .5; cursor: wait; }
+#result { margin-left: 9px; font-size: 12px; }
+.notice { border-left: 3px solid #a498ce; padding-left: 9px; font-size: 12px; }
+#error { color: #a54255; font-size: 12px; overflow-wrap: anywhere; }
+details { margin-top: 15px; font-size: 12px; color: #77708f; }
+summary { cursor: pointer; }
+ol { padding-left: 20px; }
+@media (max-width: 360px) { body { padding: 12px; } .card { padding: 12px; } label { font-size: 12px; } h1 { font-size: 17px; } }

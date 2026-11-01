@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>渐隐工具箱</title>
+<link rel="stylesheet" href="panel.css">
+</head>
+<body>
+<header><span class="tag">渐隐工具箱</span><h1>关爱空巢烤oc从我做起</h1><p id="petName">正在连接桌宠…</p></header>
+<main>
+  <section class="card">
+    <div class="row"><h2>当前心情</h2><strong id="moodValue">— / 100</strong></div>
+    <progress id="mood" value="100" max="100" aria-label="当前心情"></progress>
+    <div class="row sub"><span>难过</span><span>平静</span><span>心情充足</span></div>
+    <p class="sub">首次启用为 100，重启保留。不提供手动调整，也不会自动恢复。</p>
+    <div class="facts"><span>当前好感 <b id="affection">—</b></span><span>今日已扣 <b id="spent">— / 7</b></span></div>
+    <p id="phase" role="status">等待人物页面准备</p>
+  </section>
+  <form id="form" class="card">
+    <h2>渐隐规则</h2>
+    <label>多久未主动对话后渐隐 <span><input id="idleMinutes" type="number" min="1" max="1440" step="1" required> 分钟</span></label>
+    <label>每次消失扣除心情 <span><input id="moodLoss" type="number" min="1" max="100" step="1" required> 点</span></label>
+    <label>普通消失扣除好感 <span><input id="affectionLoss" type="number" min="0" max="7" step="1" required> 点</span></label>
+    <label>心情为 0 时扣除好感 <span><input id="zeroAffectionLoss" type="number" min="0" max="7" step="1" required> 点</span></label>
+    <p class="sub">心情为 0 时使用后一项，二者不叠加。渐隐过程固定为 15 秒，完全消失后才扣分。</p>
+    <div class="divider"></div>
+    <label class="check"><input id="chatChime" type="checkbox">聊天报时</label>
+    <label>距离渐隐开始还有 <select id="warningMinutes"><option value="15">15 分钟</option><option value="10">10 分钟</option><option value="5">5 分钟</option></select></label>
+    <p id="preview" class="sub"></p>
+    <button type="submit" id="save">保存规则</button><span id="result" role="status"></span>
+  </form>
+  <section class="card">
+    <h2>调试与恢复</h2>
+    <p class="notice" id="rule">本插件好感扣减不受原好感度开关、单次上限及每日上限约束。独立每日最多扣 7 点，好感最低为 0。</p>
+    <p class="sub">摸头、拖拽、悬停不会重置对话倒计时。唤回会开始新一轮；发送文字、图片或通话中识别到你的话会重置。睡眠、锁屏及程序离线不会追扣。</p>
+    <button id="reveal" type="button">找回桌宠</button>
+    <p id="error" role="alert"></p>
+    <details><summary>最近消失记录</summary><ol id="history"></ol></details>
+  </section>
+</main>
+<script src="panel.js"></script>
+</body>
+</html>

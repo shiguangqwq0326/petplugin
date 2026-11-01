@@ -1,0 +1,10 @@
+{
+  "id": "empty-nest-care",
+  "name": "关爱空巢烤oc从我做起",
+  "description": "一个渐隐插件，提醒你多与你的烤oc进行对话",
+  "version": "1.0.0",
+  "apiVersion": 1,
+  "main": "main.js",
+  "renderer": "renderer.js",
+  "pets": ["kanade-desktop-pet", "toya-desktop-pet", "mafuyu-desktop-pet", "mizuki-desktop-pet"]
+}
