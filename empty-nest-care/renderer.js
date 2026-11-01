@@ -16,7 +16,8 @@
   pet.mount(hint, { clickable: true });
   const chip = document.createElement('button');
   chip.textContent = '♡'; chip.title = '渐隐工具箱 · 心情与调试';
-  chip.style.cssText = 'position:absolute;right:12px;bottom:14px;width:26px;height:26px;border:1px solid #dcd8ea;border-radius:50%;color:#7f76bd;background:rgba(255,255,255,.8);cursor:pointer;opacity:.6';
+  // 与宿主右侧按钮中心对齐，放在语音按钮（bottom:54px / height:34px）上方，间隔 6px。
+  chip.style.cssText = 'position:absolute;right:14px;bottom:94px;width:26px;height:26px;border:1px solid #dcd8ea;border-radius:50%;color:#7f76bd;background:rgba(255,255,255,.8);cursor:pointer;opacity:.6';
   chip.onclick = () => pet.send({ type: 'panel' });
   pet.mount(chip, { clickable: true });
   const obscured = () => state.phase === 'fading' || state.phase === 'hidden';
