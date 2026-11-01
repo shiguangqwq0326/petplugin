@@ -1,0 +1,10 @@
+{
+  "id": "weather-brief",
+  "name": "今日天气",
+  "version": "1.0.1",
+  "description": "问一句「今天天气怎么样」，用一句话告诉你今天天气、要不要带伞和需要注意的事。第一次使用时问你在哪座城市，之后记住它。天气数据来自 Open-Meteo，不需要 API 密钥。",
+  "author": "DeepSeek",
+  "main": "main.js",
+  "apiVersion": 1,
+  "pets": ["*"]
+}
