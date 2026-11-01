@@ -1,0 +1,10 @@
+{
+  "id": "api-helper",
+  "name": "接口助手",
+  "description": "选择语音识别和记忆模型",
+  "version": "1.0.0",
+  "apiVersion": 1,
+  "main": "main.js",
+  "renderer": "renderer.js",
+  "pets": ["mafuyu-desktop-pet"]
+}

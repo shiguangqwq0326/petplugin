@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>接口助手</title><link rel="stylesheet" href="panel.css"></head>
+<body><main>
+  <header><h1>接口助手</h1><p>为语音识别和长期记忆选择接口。</p></header>
+  <section class="card" id="speechCard">
+    <div class="heading"><h2>语音识别</h2><label class="switch"><input id="speechEnabled" type="checkbox">使用插件设置</label></div>
+    <div class="grid"><label>平台<select id="speechProvider"></select></label><label>你说的语言<select id="speechLanguage"><option value="">自动</option><option value="zh">中文</option><option value="ja">日语</option><option value="en">英语</option></select></label></div>
+    <label>接口地址<input id="speechBase" spellcheck="false"></label>
+    <label>模型<div class="row"><input id="speechModel" spellcheck="false"><button id="speechChoose" type="button">选择模型</button></div></label>
+    <label>API 密钥<div class="row"><input id="speechKey" type="password" autocomplete="off"><button id="speechShow" type="button">显示</button><button id="speechClear" type="button">清除</button></div></label>
+    <div class="row"><button id="speechTest" type="button">测试识别</button><span id="speechStatus" class="hint" aria-live="polite"></span></div>
+    <p class="hint">说完一句再识别。阿里云选择 qwen3-asr-flash；混合语言请选“自动”。测试会发送半秒静音，实际效果请在通话中确认。</p>
+  </section>
+  <section class="card" id="memoryCard">
+    <div class="heading"><h2>记忆向量</h2><label class="switch"><input id="memoryEnabled" type="checkbox">使用插件设置</label></div>
+    <label>平台<select id="memoryProvider"></select></label>
+    <label>接口地址<input id="memoryBase" spellcheck="false"></label>
+    <label>模型<div class="row"><input id="memoryModel" spellcheck="false"><button id="memoryChoose" type="button">选择模型</button></div></label>
+    <label>API 密钥<div class="row"><input id="memoryKey" type="password" autocomplete="off"><button id="memoryShow" type="button">显示</button><button id="memoryClear" type="button">清除</button></div></label>
+    <div class="row"><button id="memoryTest" type="button">测试向量</button><span id="memoryStatus" class="hint" aria-live="polite"></span></div>
+    <p class="hint">更换平台或模型后，先保存，再重算记忆。原来的记忆文字会保留；不混用不同模型的向量。测试与重算可能按平台规则计费。</p>
+    <div class="row"><button id="rebuild" type="button">重算全部记忆</button><button id="backup" type="button">打开备份位置</button></div>
+    <p id="memoryInfo" class="hint" aria-live="polite"></p>
+  </section>
+  <section id="chooser" class="card chooser" hidden>
+    <h2 id="chooserTitle">选择模型</h2><label>筛选<input id="modelSearch" placeholder="输入名称"></label>
+    <select id="modelOptions" size="6" aria-label="可选模型"></select>
+    <div class="row"><button id="modelRead" type="button">读取平台模型列表</button><button id="modelUse" type="button" class="primary">使用所选模型</button><button id="modelClose" type="button">关闭</button></div>
+    <p id="modelNote" class="hint" aria-live="polite"></p>
+  </section>
+  <footer><p id="status" aria-live="polite">正在读取设置…</p><button id="save" type="button" class="primary">保存并应用</button></footer>
+  <p class="hint">密钥只保存到本机插件数据。输入框留空会保留已存密钥；切换平台会清空待保存密钥。关闭插件设置或停用插件后，恢复桌宠原来的接口。</p>
+</main><script src="panel.js"></script></body></html>
